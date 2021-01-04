@@ -83,16 +83,23 @@ int flash_get_opts(struct flash_opts* o, int ac, char** av) {
     int result;
 
     while (ac >= 1) {
-        if (strcmp(av[0], "--version") == 0) {
+        if (strcmp(av[0], "--version") == 0)
+        {
             printf("v%s\n", STLINK_VERSION);
             exit(EXIT_SUCCESS);
-        } else if (strcmp(av[0], "--debug") == 0) {
+        }
+        else if (strcmp(av[0], "--debug") == 0) {
             o->log_level = DEBUG_LOG_LEVEL;
-        } else if (strcmp(av[0], "--opt") == 0) {
+        }
+        else if (strcmp(av[0], "--opt") == 0) {
             o->opt = ENABLE_OPT;
-        } else if (strcmp(av[0], "--reset") == 0) {
+        }
+        else if (strcmp(av[0], "--reset") == 0)
+        {
             o->reset = 1;
-        } else if (strcmp(av[0], "--serial") == 0 || starts_with(av[0], "--serial=")) {
+        }
+        else if (strcmp(av[0], "--serial") == 0 || starts_with(av[0], "--serial="))
+        {
             const char * serial;
 
             if (strcmp(av[0], "--serial") == 0) {
@@ -118,7 +125,8 @@ int flash_get_opts(struct flash_opts* o, int ac, char** av) {
                 memcpy(buffer, serial + j, 2);
                 o->serial[length - k] = (uint8_t)strtol(buffer, NULL, 16);
             }
-        } else if (strcmp(av[0], "--area") == 0 || starts_with(av[0], "--area=")) {
+        }
+        else if (strcmp(av[0], "--area") == 0 || starts_with(av[0], "--area=")) {
             const char * area;
 
             if (strcmp(av[0], "--area") == 0) {
@@ -150,10 +158,27 @@ int flash_get_opts(struct flash_opts* o, int ac, char** av) {
                 return(-1);
             }
 
-        } else if (strcmp(av[0], "--freq") == 0 || starts_with(av[0], "--freq=")) {
+        }
+        else if ( strcmp(av[0], "--busNdev") == 0 )
+        {
+            printf("FOUND busNdev VAR!\n");
+            ac--;
+            av++;
+
+            if (ac < 1)
+            {
+                return(-1);
+            }
+
+            o->busNdev = av[0];
+            printf("BusNDev Received %s\n", o->busNdev );
+        }
+        else if (strcmp(av[0], "--freq") == 0 || starts_with(av[0], "--freq="))
+        {
             const char* freq;
 
-            if (strcmp(av[0], "--freq") == 0) {
+            if (strcmp(av[0], "--freq") == 0)
+            {
                 ac--;
                 av++;
 
@@ -162,7 +187,9 @@ int flash_get_opts(struct flash_opts* o, int ac, char** av) {
                 }
 
                 freq = av[0];
-            } else {
+            }
+            else
+            {
                 freq = av[0] + strlen("--freq=");
             }
 

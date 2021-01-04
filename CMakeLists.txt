@@ -280,6 +280,8 @@ install(TARGETS st-trace DESTINATION ${CMAKE_INSTALL_BINDIR})
 ###
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+    #message(STATUS "Linux Cmake Flags")
+    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wdiscarded-qualifiers")
     ## Install modprobe.d conf files to /etc/modprobe.d/ (explicitly hardcoded)
     set(STLINK_MODPROBED_DIR "/etc/modprobe.d" CACHE PATH "modprobe.d directory")
     install(FILES ${CMAKE_SOURCE_DIR}/config/modprobe.d/stlink_v1.conf DESTINATION ${STLINK_MODPROBED_DIR})
@@ -296,7 +298,7 @@ endif ()
 ###
 
 add_subdirectory(src/stlink-gui)  # contains subordinate CMakeLists to build GUI
-add_subdirectory(tests)           # contains subordinate CMakeLists to build test executables
+#add_subdirectory(tests)           # contains subordinate CMakeLists to build test executables
 add_subdirectory(cmake/packaging) # contains subordinate CMakeLists to build packages
 
 option(STLINK_GENERATE_MANPAGES "Generate manpages with pandoc" OFF)

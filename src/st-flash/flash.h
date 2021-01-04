@@ -16,6 +16,7 @@ struct flash_opts {
     enum flash_cmd cmd;
     uint8_t serial[STLINK_SERIAL_MAX_SIZE];
     const char* filename;
+    char* busNdev;
     stm32_addr_t addr;
     size_t size;
     int reset;
@@ -29,7 +30,7 @@ struct flash_opts {
     bool connect_under_reset;
 };
 
-#define FLASH_OPTS_INITIALIZER {0, { 0 }, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#define FLASH_OPTS_INITIALIZER {0, { 0 }, NULL, NULL, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
 int flash_get_opts(struct flash_opts* o, int ac, char** av);
 

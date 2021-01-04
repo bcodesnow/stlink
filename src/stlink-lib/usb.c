@@ -1471,6 +1471,230 @@ static size_t stlink_probe_usb_devs(libusb_device **devs, stlink_t **sldevs[]) {
     return(slcur);
 }
 
+
+
+stlink_t *stlink_open_usb_inel(enum ugly_loglevel verbose, int reset, char serial[STLINK_SERIAL_MAX_SIZE], int freq, char* busNdev) {
+    stlink_t* sl = NULL;
+    struct stlink_libusb* slu = NULL;
+    int ret = -1;
+    int config;
+
+    sl = calloc(1, sizeof(stlink_t));
+    slu = calloc(1, sizeof(struct stlink_libusb));
+
+    if (sl == NULL) { goto on_malloc_error; }
+
+    if (slu == NULL) { goto on_malloc_error; }
+
+    ugly_init(verbose);
+    sl->backend = &_stlink_usb_backend;
+    sl->backend_data = slu;
+
+    sl->core_stat = TARGET_UNKNOWN;
+
+    if (libusb_init(&(slu->libusb_ctx))) {
+        WLOG("failed to init libusb context, wrong version of libraries?\n");
+        goto on_error;
+    }
+
+#if LIBUSB_API_VERSION < 0x01000106
+    libusb_set_debug(slu->libusb_ctx, ugly_libusb_log_level(verbose));
+#else
+    libusb_set_option(slu->libusb_ctx, LIBUSB_OPTION_LOG_LEVEL, ugly_libusb_log_level(verbose));
+#endif
+
+    libusb_device **list;
+    // TODO: We should use ssize_t and use it as a counter if > 0.
+    // As per libusb API: ssize_t libusb_get_device_list (libusb_context *ctx, libusb_device ***list)
+    int cnt = (int)libusb_get_device_list(slu->libusb_ctx, &list);
+    struct libusb_device_descriptor desc;
+    int devBus  = 0;
+    int devAddr = 0;
+
+    // Modified to Accept Bus::Device
+    char *device = busNdev;
+
+    if (device) {
+        char *c = strchr(device, ':');
+
+        if (c == NULL) {
+            WLOG("STLINK_DEVICE must be <USB_BUS>:<USB_ADDR> format\n");
+            goto on_error;
+        }
+
+        devBus = atoi(device);
+        *c++ = 0;
+        devAddr = atoi(c);
+        ILOG("bus %03d dev %03d\n", devBus, devAddr);
+    }
+
+    while (cnt--) {
+        struct libusb_device_handle *handle;
+
+        libusb_get_device_descriptor(list[cnt], &desc);
+
+        if (desc.idVendor != STLINK_USB_VID_ST) { continue; }
+
+        if (devBus && devAddr) {
+            if ((libusb_get_bus_number(list[cnt]) != devBus) ||
+                (libusb_get_device_address(list[cnt]) != devAddr)) {
+                continue;
+            }
+        }
+
+        ret = libusb_open(list[cnt], &handle);
+
+        if (ret) { continue; } // could not open device
+
+        sl->serial_size = libusb_get_string_descriptor_ascii(
+            handle, desc.iSerialNumber, (unsigned char *)sl->serial, sizeof(sl->serial));
+
+        libusb_close(handle);
+
+        if (sl->serial_size < 0) { continue; } // could not read serial
+
+        // if no serial provided, or if serial match device, fixup version and protocol
+        if (((serial == NULL) || (*serial == 0)) || (memcmp(serial, &sl->serial, sl->serial_size) == 0)) {
+            if (STLINK_V1_USB_PID(desc.idProduct)) {
+                slu->protocoll = 1;
+                sl->version.stlink_v = 1;
+            } else if (STLINK_V2_USB_PID(desc.idProduct) || STLINK_V2_1_USB_PID(desc.idProduct)) {
+                sl->version.stlink_v = 2;
+            } else if (STLINK_V3_USB_PID(desc.idProduct)) {
+                sl->version.stlink_v = 3;
+            }
+
+            break;
+        }
+    }
+
+    if (cnt < 0) {
+        WLOG ("Couldn't find %s ST-Link devices\n", (devBus && devAddr) ? "matched" : "any");
+        goto on_error;
+    } else {
+        ret = libusb_open(list[cnt], &slu->usb_handle);
+
+        if (ret != 0) {
+            WLOG("Error %d (%s) opening ST-Link v%d device %03d:%03d\n", ret,
+                 strerror(errno),
+                 sl->version.stlink_v,
+                 libusb_get_bus_number(list[cnt]),
+                 libusb_get_device_address(list[cnt]));
+            libusb_free_device_list(list, 1);
+            goto on_error;
+        }
+    }
+
+    libusb_free_device_list(list, 1);
+
+    if (libusb_kernel_driver_active(slu->usb_handle, 0) == 1) {
+        ret = libusb_detach_kernel_driver(slu->usb_handle, 0);
+
+        if (ret < 0) {
+            WLOG("libusb_detach_kernel_driver(() error %s\n", strerror(-ret));
+            goto on_libusb_error;
+        }
+    }
+
+    if (libusb_get_configuration(slu->usb_handle, &config)) {
+        // this may fail for a previous configured device
+        WLOG("libusb_get_configuration()\n");
+        goto on_libusb_error;
+    }
+
+    if (config != 1) {
+        printf("setting new configuration (%d -> 1)\n", config);
+
+        if (libusb_set_configuration(slu->usb_handle, 1)) {
+            // this may fail for a previous configured device
+            WLOG("libusb_set_configuration() failed\n");
+            goto on_libusb_error;
+        }
+    }
+
+    if (libusb_claim_interface(slu->usb_handle, 0)) {
+        WLOG("Stlink usb device found, but unable to claim (probably already in use?)\n");
+        goto on_libusb_error;
+    }
+
+    // TODO: Could use the scanning technique from STM8 code here...
+    slu->ep_rep = 1 /* ep rep */ | LIBUSB_ENDPOINT_IN;
+
+    if (desc.idProduct == STLINK_USB_PID_STLINK_NUCLEO ||
+        desc.idProduct == STLINK_USB_PID_STLINK_32L_AUDIO ||
+        desc.idProduct == STLINK_USB_PID_STLINK_V2_1 ||
+        desc.idProduct == STLINK_USB_PID_STLINK_V3_USBLOADER ||
+        desc.idProduct == STLINK_USB_PID_STLINK_V3E_PID ||
+        desc.idProduct == STLINK_USB_PID_STLINK_V3S_PID ||
+        desc.idProduct == STLINK_USB_PID_STLINK_V3_2VCP_PID) {
+        slu->ep_req = 1 /* ep req */ | LIBUSB_ENDPOINT_OUT;
+        slu->ep_trace = 2 | LIBUSB_ENDPOINT_IN;
+    } else {
+        slu->ep_req = 2 /* ep req */ | LIBUSB_ENDPOINT_OUT;
+        slu->ep_trace = 3 | LIBUSB_ENDPOINT_IN;
+    }
+
+    slu->sg_transfer_idx = 0;
+    slu->cmd_len = (slu->protocoll == 1) ? STLINK_SG_SIZE : STLINK_CMD_SIZE;
+
+    // initialize stlink version (sl->version)
+    stlink_version(sl);
+
+    if (stlink_current_mode(sl) == STLINK_DEV_DFU_MODE) {
+        // this seems to work, and is unnecessary information for the user.
+        // demoted to debug -- REW
+        DLOG("-- exit_dfu_mode\n");
+        stlink_exit_dfu_mode(sl);
+    }
+
+    sl->freq = freq;
+    // set the speed before entering the mode as the chip discovery phase
+    // should be done at this speed too
+    // set the stlink clock speed (default is 1800kHz)
+    DLOG("JTAG/SWD freq set to %d\n", freq);
+    stlink_set_swdclk(sl, freq);
+
+    if (reset == 2) {
+        stlink_jtag_reset(sl, 0);
+
+        if (stlink_current_mode(sl) != STLINK_DEV_DEBUG_MODE) { stlink_enter_swd_mode(sl); }
+
+        stlink_force_debug(sl);
+        stlink_jtag_reset(sl, 1);
+        usleep(10000);
+    }
+
+
+    if (stlink_current_mode(sl) != STLINK_DEV_DEBUG_MODE) { stlink_enter_swd_mode(sl); }
+
+    if (reset == 1) {
+        if ( sl->version.stlink_v > 1) { stlink_jtag_reset(sl, 2); }
+
+        stlink_reset(sl);
+        usleep(10000);
+    }
+
+    stlink_load_device_params(sl);
+    return(sl);
+
+on_libusb_error:
+    stlink_close(sl);
+    return(NULL);
+
+on_error:
+
+    if (slu->libusb_ctx) { libusb_exit(slu->libusb_ctx); }
+
+on_malloc_error:
+
+    if (sl != NULL) { free(sl); }
+
+    if (slu != NULL) { free(slu); }
+
+    return(NULL);
+}
+
+
 size_t stlink_probe_usb(stlink_t **stdevs[]) {
     libusb_device **devs;
     stlink_t **sldevs;
