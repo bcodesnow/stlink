@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/stlink_build/stlink
+# Install script for directory: /home/b/Desktop/STLINK/stlink
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,8 +50,8 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     endif()
   endforeach()
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/home/pi/stlink_build/stlink/lib/libstlink.so.1.6.1"
-    "/home/pi/stlink_build/stlink/lib/libstlink.so.1"
+    "/home/b/Desktop/STLINK/stlink/lib/libstlink.so.1.6.1"
+    "/home/b/Desktop/STLINK/stlink/lib/libstlink.so.1"
     )
   foreach(file
       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libstlink.so.1.6.1"
@@ -73,7 +73,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libstlink.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/pi/stlink_build/stlink/lib/libstlink.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/b/Desktop/STLINK/stlink/lib/libstlink.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libstlink.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libstlink.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -83,7 +83,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/pi/stlink_build/stlink/lib/libstlink.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/b/Desktop/STLINK/stlink/lib/libstlink.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -93,12 +93,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-flash"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/pi/stlink_build/stlink/bin/st-flash")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/b/Desktop/STLINK/stlink/bin/st-flash")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-flash" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-flash")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-flash"
-         OLD_RPATH "/home/pi/stlink_build/stlink/lib:"
+         OLD_RPATH "/home/b/Desktop/STLINK/stlink/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-flash")
@@ -113,12 +113,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-info"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/pi/stlink_build/stlink/bin/st-info")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/b/Desktop/STLINK/stlink/bin/st-info")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-info" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-info")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-info"
-         OLD_RPATH "/home/pi/stlink_build/stlink/lib:"
+         OLD_RPATH "/home/b/Desktop/STLINK/stlink/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-info")
@@ -133,12 +133,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-util"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/pi/stlink_build/stlink/bin/st-util")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/b/Desktop/STLINK/stlink/bin/st-util")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-util" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-util")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-util"
-         OLD_RPATH "/home/pi/stlink_build/stlink/lib:"
+         OLD_RPATH "/home/b/Desktop/STLINK/stlink/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-util")
@@ -153,12 +153,12 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-trace"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/pi/stlink_build/stlink/bin/st-trace")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "/home/b/Desktop/STLINK/stlink/bin/st-trace")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-trace" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-trace")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-trace"
-         OLD_RPATH "/home/pi/stlink_build/stlink/lib:"
+         OLD_RPATH "/home/b/Desktop/STLINK/stlink/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/bin/st-trace")
@@ -175,7 +175,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/etc/modprobe.d" TYPE FILE FILES "/home/pi/stlink_build/stlink/config/modprobe.d/stlink_v1.conf")
+file(INSTALL DESTINATION "/etc/modprobe.d" TYPE FILE FILES "/home/b/Desktop/STLINK/stlink/config/modprobe.d/stlink_v1.conf")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -188,19 +188,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
 file(INSTALL DESTINATION "/lib/udev/rules.d" TYPE FILE FILES
-    "/home/pi/stlink_build/stlink/config/udev/rules.d/49-stlinkv1.rules"
-    "/home/pi/stlink_build/stlink/config/udev/rules.d/49-stlinkv2-1.rules"
-    "/home/pi/stlink_build/stlink/config/udev/rules.d/49-stlinkv2.rules"
-    "/home/pi/stlink_build/stlink/config/udev/rules.d/49-stlinkv3.rules"
+    "/home/b/Desktop/STLINK/stlink/config/udev/rules.d/49-stlinkv1.rules"
+    "/home/b/Desktop/STLINK/stlink/config/udev/rules.d/49-stlinkv2-1.rules"
+    "/home/b/Desktop/STLINK/stlink/config/udev/rules.d/49-stlinkv2.rules"
+    "/home/b/Desktop/STLINK/stlink/config/udev/rules.d/49-stlinkv3.rules"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/pi/stlink_build/stlink/inc/cmake_install.cmake")
-  include("/home/pi/stlink_build/stlink/src/stlink-gui/cmake_install.cmake")
-  include("/home/pi/stlink_build/stlink/cmake/packaging/cmake_install.cmake")
-  include("/home/pi/stlink_build/stlink/doc/man/cmake_install.cmake")
+  include("/home/b/Desktop/STLINK/stlink/inc/cmake_install.cmake")
+  include("/home/b/Desktop/STLINK/stlink/src/stlink-gui/cmake_install.cmake")
+  include("/home/b/Desktop/STLINK/stlink/cmake/packaging/cmake_install.cmake")
+  include("/home/b/Desktop/STLINK/stlink/doc/man/cmake_install.cmake")
 
 endif()
 
@@ -212,5 +212,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/pi/stlink_build/stlink/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/b/Desktop/STLINK/stlink/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

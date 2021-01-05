@@ -2874,7 +2874,7 @@ int stlink_flashloader_write(stlink_t *sl, flash_loader_t *fl, stm32_addr_t addr
             uint32_t data;
 
             if ((off % sl->flash_pgsz) > (sl->flash_pgsz - 5)) {
-                fprintf(stdout, "\r%3u/%3u pages written\n",
+                fprintf(stdout, "%3u/%3u pages written\n",
                         (unsigned int)(off / sl->flash_pgsz),
                         (unsigned int)(len / sl->flash_pgsz));
                 fflush(stdout);
@@ -2923,7 +2923,7 @@ int stlink_flashloader_write(stlink_t *sl, flash_loader_t *fl, stm32_addr_t addr
             uint32_t data;
             
             if ((off % sl->flash_pgsz) > (sl->flash_pgsz - 5)) {
-                fprintf(stdout, "\r%3u/%3u pages written",
+                fprintf(stdout, "%3u/%3u pages written\n",
                         (unsigned int)(off / sl->flash_pgsz),
                         (unsigned int)(len / sl->flash_pgsz));
                 fflush(stdout);
@@ -2963,7 +2963,7 @@ int stlink_flashloader_write(stlink_t *sl, flash_loader_t *fl, stm32_addr_t addr
 
             if (sl->verbose >= 1) {
                 // show progress; writing procedure is slow and previous errors are misleading
-                fprintf(stdout, "\r%3u/%3u pages written", ++write_block_count,
+                fprintf(stdout, "%3u/%3u pages written\n", ++write_block_count,
                         (unsigned int)((len + sl->flash_pgsz - 1) / sl->flash_pgsz));
                 fflush(stdout);
             }
@@ -2983,7 +2983,7 @@ int stlink_flashloader_write(stlink_t *sl, flash_loader_t *fl, stm32_addr_t addr
 
             if (sl->verbose >= 1) {
                 // show progress
-                fprintf(stdout, "\r%u/%u bytes written", (unsigned int)off, (unsigned int)len);
+                fprintf(stdout, "%u/%u bytes written\n", (unsigned int)off, (unsigned int)len);
                 fflush(stdout);
             }
         }

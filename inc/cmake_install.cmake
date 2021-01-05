@@ -1,4 +1,4 @@
-# Install script for directory: /home/pi/stlink_build/stlink/inc
+# Install script for directory: /home/b/Desktop/STLINK/stlink/inc
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,20 +39,20 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/stlink" TYPE FILE FILES
-    "/home/pi/stlink_build/stlink/inc/backend.h"
-    "/home/pi/stlink_build/stlink/inc/stlink.h"
-    "/home/pi/stlink_build/stlink/inc/stm32.h"
-    "/home/pi/stlink_build/stlink/inc/version.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/chipid.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/commands.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/flash_loader.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/helper.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/libusb_settings.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/logging.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/md5.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/reg.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/sg.h"
-    "/home/pi/stlink_build/stlink/src/stlink-lib/usb.h"
+    "/home/b/Desktop/STLINK/stlink/inc/backend.h"
+    "/home/b/Desktop/STLINK/stlink/inc/stlink.h"
+    "/home/b/Desktop/STLINK/stlink/inc/stm32.h"
+    "/home/b/Desktop/STLINK/stlink/inc/version.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/chipid.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/commands.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/flash_loader.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/helper.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/libusb_settings.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/logging.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/md5.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/reg.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/sg.h"
+    "/home/b/Desktop/STLINK/stlink/src/stlink-lib/usb.h"
     )
 endif()
 
