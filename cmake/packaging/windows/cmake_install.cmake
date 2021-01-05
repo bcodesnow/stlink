@@ -1,4 +1,4 @@
-# Install script for directory: /root/Downloads/st_link_git/stlink/cmake/packaging/windows
+# Install script for directory: /home/pi/stlink_build/stlink/cmake/packaging/windows
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

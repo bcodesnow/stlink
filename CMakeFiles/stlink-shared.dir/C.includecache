@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/root/Downloads/st_link_git/stlink/src/common.c
+/home/pi/stlink_build/stlink/src/common.c
 stdarg.h
 -
 stdio.h
@@ -40,15 +40,15 @@ sys/mman.h
 mmap.h
 -
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/chipid.c
+/home/pi/stlink_build/stlink/src/stlink-lib/chipid.c
 stlink.h
 -
 chipid.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/chipid.h
+/home/pi/stlink_build/stlink/src/stlink-lib/chipid.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/chipid.h
+/home/pi/stlink_build/stlink/src/stlink-lib/chipid.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/flash_loader.c
+/home/pi/stlink_build/stlink/src/stlink-lib/flash_loader.c
 stdio.h
 -
 string.h
@@ -58,9 +58,9 @@ unistd.h
 stlink.h
 -
 flash_loader.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/flash_loader.h
+/home/pi/stlink_build/stlink/src/stlink-lib/flash_loader.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/flash_loader.h
+/home/pi/stlink_build/stlink/src/stlink-lib/flash_loader.h
 stdint.h
 -
 stddef.h
@@ -68,7 +68,7 @@ stddef.h
 stlink.h
 -
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/helper.c
+/home/pi/stlink_build/stlink/src/stlink-lib/helper.c
 helper.h
 -
 stddef.h
@@ -78,7 +78,7 @@ sys/time.h
 sys_time.h
 -
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/logging.c
+/home/pi/stlink_build/stlink/src/stlink-lib/logging.c
 stddef.h
 -
 stdio.h
@@ -90,23 +90,23 @@ stdarg.h
 time.h
 -
 logging.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/logging.h
+/home/pi/stlink_build/stlink/src/stlink-lib/logging.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/logging.h
+/home/pi/stlink_build/stlink/src/stlink-lib/logging.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/md5.c
+/home/pi/stlink_build/stlink/src/stlink-lib/md5.c
 memory.h
 -
 md5.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/md5.h
+/home/pi/stlink_build/stlink/src/stlink-lib/md5.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/md5.h
+/home/pi/stlink_build/stlink/src/stlink-lib/md5.h
 stdint.h
 -
 stdio.h
 -
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/sg.c
+/home/pi/stlink_build/stlink/src/stlink-lib/sg.c
 assert.h
 -
 stdio.h
@@ -120,17 +120,17 @@ sys/types.h
 stlink.h
 -
 logging.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/logging.h
+/home/pi/stlink_build/stlink/src/stlink-lib/logging.h
 sg.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/sg.h
+/home/pi/stlink_build/stlink/src/stlink-lib/sg.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/sg.h
+/home/pi/stlink_build/stlink/src/stlink-lib/sg.h
 stlink.h
 -
 libusb_settings.h
 -
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/usb.c
+/home/pi/stlink_build/stlink/src/stlink-lib/usb.c
 stdio.h
 -
 stdlib.h
@@ -156,9 +156,9 @@ stlink.h
 helper.h
 -
 usb.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/usb.h
+/home/pi/stlink_build/stlink/src/stlink-lib/usb.h
 
-/root/Downloads/st_link_git/stlink/src/stlink-lib/usb.h
+/home/pi/stlink_build/stlink/src/stlink-lib/usb.h
 stdbool.h
 -
 stlink.h
@@ -166,7 +166,7 @@ stlink.h
 libusb_settings.h
 -
 logging.h
-/root/Downloads/st_link_git/stlink/src/stlink-lib/logging.h
+/home/pi/stlink_build/stlink/src/stlink-lib/logging.h
 
 /usr/include/libusb-1.0/libusb.h
 stdint.h

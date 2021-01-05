@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/root/Downloads/st_link_git/stlink/src/st-trace/trace.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/st-trace.dir/src/st-trace/trace.c.o"
+  "/home/pi/stlink_build/stlink/src/st-trace/trace.c" "/home/pi/stlink_build/stlink/CMakeFiles/st-trace.dir/src/st-trace/trace.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -26,7 +26,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-shared.dir/DependInfo.cmake"
+  "/home/pi/stlink_build/stlink/CMakeFiles/stlink-shared.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

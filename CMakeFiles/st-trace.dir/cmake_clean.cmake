@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/st-trace.dir/src/st-trace/trace.c.o"
-  "bin/st-trace"
   "bin/st-trace.pdb"
+  "bin/st-trace"
 )
 
 # Per-language clean rules from dependency scanning.

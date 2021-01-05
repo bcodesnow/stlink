@@ -1,4 +1,4 @@
-# Install script for directory: /root/Downloads/st_link_git/stlink/cmake/packaging
+# Install script for directory: /home/pi/stlink_build/stlink/cmake/packaging
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,9 +39,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/root/Downloads/st_link_git/stlink/cmake/packaging/deb/cmake_install.cmake")
-  include("/root/Downloads/st_link_git/stlink/cmake/packaging/rpm/cmake_install.cmake")
-  include("/root/Downloads/st_link_git/stlink/cmake/packaging/windows/cmake_install.cmake")
+  include("/home/pi/stlink_build/stlink/cmake/packaging/deb/cmake_install.cmake")
+  include("/home/pi/stlink_build/stlink/cmake/packaging/rpm/cmake_install.cmake")
+  include("/home/pi/stlink_build/stlink/cmake/packaging/windows/cmake_install.cmake")
 
 endif()
 

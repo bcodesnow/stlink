@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/st-util.dir/src/st-util/gdb-remote.c.o"
   "CMakeFiles/st-util.dir/src/st-util/gdb-server.c.o"
   "CMakeFiles/st-util.dir/src/st-util/semihosting.c.o"
-  "bin/st-util"
   "bin/st-util.pdb"
+  "bin/st-util"
 )
 
 # Per-language clean rules from dependency scanning.

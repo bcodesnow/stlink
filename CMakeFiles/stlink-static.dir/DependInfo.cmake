@@ -4,14 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/root/Downloads/st_link_git/stlink/src/common.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/common.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/chipid.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/chipid.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/flash_loader.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/flash_loader.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/helper.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/helper.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/logging.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/logging.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/md5.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/md5.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/sg.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/sg.c.o"
-  "/root/Downloads/st_link_git/stlink/src/stlink-lib/usb.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/usb.c.o"
+  "/home/pi/stlink_build/stlink/src/common.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/common.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/chipid.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/chipid.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/flash_loader.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/flash_loader.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/helper.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/helper.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/logging.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/logging.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/md5.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/md5.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/sg.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/sg.c.o"
+  "/home/pi/stlink_build/stlink/src/stlink-lib/usb.c" "/home/pi/stlink_build/stlink/CMakeFiles/stlink-static.dir/src/stlink-lib/usb.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

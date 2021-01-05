@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/root/Downloads/st_link_git/stlink/src/st-flash/flash.c
+/home/pi/stlink_build/stlink/src/st-flash/flash.c
 signal.h
 -
 stdio.h
@@ -20,15 +20,15 @@ sys/types.h
 stlink.h
 -
 flash.h
-/root/Downloads/st_link_git/stlink/src/st-flash/flash.h
+/home/pi/stlink_build/stlink/src/st-flash/flash.h
 
-/root/Downloads/st_link_git/stlink/src/st-flash/flash.h
+/home/pi/stlink_build/stlink/src/st-flash/flash.h
 stdint.h
 -
 stlink.h
 -
 
-/root/Downloads/st_link_git/stlink/src/st-flash/flash_opts.c
+/home/pi/stlink_build/stlink/src/st-flash/flash_opts.c
 stdlib.h
 -
 stdio.h
@@ -36,7 +36,7 @@ stdio.h
 string.h
 -
 flash.h
-/root/Downloads/st_link_git/stlink/src/st-flash/flash.h
+/home/pi/stlink_build/stlink/src/st-flash/flash.h
 
 /usr/include/libusb-1.0/libusb.h
 stdint.h

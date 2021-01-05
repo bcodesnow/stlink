@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/root/Downloads/st_link_git/stlink/src/st-flash/flash.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/st-flash.dir/src/st-flash/flash.c.o"
-  "/root/Downloads/st_link_git/stlink/src/st-flash/flash_opts.c" "/root/Downloads/st_link_git/stlink/CMakeFiles/st-flash.dir/src/st-flash/flash_opts.c.o"
+  "/home/pi/stlink_build/stlink/src/st-flash/flash.c" "/home/pi/stlink_build/stlink/CMakeFiles/st-flash.dir/src/st-flash/flash.c.o"
+  "/home/pi/stlink_build/stlink/src/st-flash/flash_opts.c" "/home/pi/stlink_build/stlink/CMakeFiles/st-flash.dir/src/st-flash/flash_opts.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -27,7 +27,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/root/Downloads/st_link_git/stlink/CMakeFiles/stlink-shared.dir/DependInfo.cmake"
+  "/home/pi/stlink_build/stlink/CMakeFiles/stlink-shared.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

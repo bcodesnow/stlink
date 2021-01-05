@@ -1,8 +1,8 @@
-if (NOT EXISTS "/root/Downloads/st_link_git/stlink/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: /root/Downloads/st_link_git/stlink/install_manifest.txt")
+if (NOT EXISTS "/home/pi/stlink_build/stlink/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: /home/pi/stlink_build/stlink/install_manifest.txt")
 endif ()
 
-file(READ "/root/Downloads/st_link_git/stlink/install_manifest.txt" files)
+file(READ "/home/pi/stlink_build/stlink/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach (file ${files})
     message(STATUS "Uninstalling $ENV{DESTDIR}${file}")

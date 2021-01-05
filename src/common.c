@@ -2874,7 +2874,7 @@ int stlink_flashloader_write(stlink_t *sl, flash_loader_t *fl, stm32_addr_t addr
             uint32_t data;
 
             if ((off % sl->flash_pgsz) > (sl->flash_pgsz - 5)) {
-                fprintf(stdout, "\r%3u/%3u pages written",
+                fprintf(stdout, "\r%3u/%3u pages written\n",
                         (unsigned int)(off / sl->flash_pgsz),
                         (unsigned int)(len / sl->flash_pgsz));
                 fflush(stdout);

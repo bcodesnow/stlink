@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/root/Downloads/st_link_git/stlink/src/st-trace/trace.c
+/home/pi/stlink_build/stlink/src/st-trace/trace.c
 stdio.h
 -
 stdlib.h

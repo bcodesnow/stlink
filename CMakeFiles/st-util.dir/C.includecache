@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-remote.c
+/home/pi/stlink_build/stlink/src/st-util/gdb-remote.c
 stdio.h
 -
 string.h
@@ -22,11 +22,11 @@ unistd.h
 sys/poll.h
 -
 gdb-remote.h
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-remote.h
+/home/pi/stlink_build/stlink/src/st-util/gdb-remote.h
 
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-remote.h
+/home/pi/stlink_build/stlink/src/st-util/gdb-remote.h
 
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-server.c
+/home/pi/stlink_build/stlink/src/st-util/gdb-server.c
 ctype.h
 -
 getopt.h
@@ -58,15 +58,15 @@ stlink.h
 logging.h
 -
 gdb-remote.h
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-remote.h
+/home/pi/stlink_build/stlink/src/st-util/gdb-remote.h
 gdb-server.h
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-server.h
+/home/pi/stlink_build/stlink/src/st-util/gdb-server.h
 semihosting.h
-/root/Downloads/st_link_git/stlink/src/st-util/semihosting.h
+/home/pi/stlink_build/stlink/src/st-util/semihosting.h
 
-/root/Downloads/st_link_git/stlink/src/st-util/gdb-server.h
+/home/pi/stlink_build/stlink/src/st-util/gdb-server.h
 
-/root/Downloads/st_link_git/stlink/src/st-util/semihosting.c
+/home/pi/stlink_build/stlink/src/st-util/semihosting.c
 stdio.h
 -
 string.h
@@ -84,9 +84,9 @@ stlink.h
 logging.h
 -
 semihosting.h
-/root/Downloads/st_link_git/stlink/src/st-util/semihosting.h
+/home/pi/stlink_build/stlink/src/st-util/semihosting.h
 
-/root/Downloads/st_link_git/stlink/src/st-util/semihosting.h
+/home/pi/stlink_build/stlink/src/st-util/semihosting.h
 stlink.h
 -
 

@@ -46,3 +46,99 @@ make: *** [Makefile:121: cmTC_cf286/fast] Error 2
 
 
 
+Performing C SOURCE FILE Test C_SUPPORTS_WMISSING_VARIABLE_DECLARATIONS failed with the following output:
+Change Dir: /home/pi/STLINK/stlink/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_044f2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_044f2.dir/build.make CMakeFiles/cmTC_044f2.dir/build
+make[1]: Entering directory '/home/pi/STLINK/stlink/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_044f2.dir/src.c.o
+/usr/bin/cc   -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -DC_SUPPORTS_WMISSING_VARIABLE_DECLARATIONS   -Wmissing-variable-declarations -o CMakeFiles/cmTC_044f2.dir/src.c.o   -c /home/pi/STLINK/stlink/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-Wmissing-variable-declarations'; did you mean '-Wmissing-declarations'?
+make[1]: *** [CMakeFiles/cmTC_044f2.dir/build.make:66: CMakeFiles/cmTC_044f2.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/pi/STLINK/stlink/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_044f2/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_SUPPORTS_WSHORTEN_64_TO_32 failed with the following output:
+Change Dir: /home/pi/STLINK/stlink/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_e8fbc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e8fbc.dir/build.make CMakeFiles/cmTC_e8fbc.dir/build
+make[1]: Entering directory '/home/pi/STLINK/stlink/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e8fbc.dir/src.c.o
+/usr/bin/cc   -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -DC_SUPPORTS_WSHORTEN_64_TO_32   -Wshorten-64-to-32 -o CMakeFiles/cmTC_e8fbc.dir/src.c.o   -c /home/pi/STLINK/stlink/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-Wshorten-64-to-32'
+make[1]: *** [CMakeFiles/cmTC_e8fbc.dir/build.make:66: CMakeFiles/cmTC_e8fbc.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/pi/STLINK/stlink/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_e8fbc/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Determining if the function __stack_chk_fail exists in the ssp failed with the following output:
+Change Dir: /home/pi/STLINK/stlink/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_73efc/fast"
+/usr/bin/make -f CMakeFiles/cmTC_73efc.dir/build.make CMakeFiles/cmTC_73efc.dir/build
+make[1]: Entering directory '/home/pi/STLINK/stlink/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_73efc.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -Wimplicit-function-declaration -Wredundant-decls -fPIC -O2 -Werror -DCHECK_FUNCTION_EXISTS=__stack_chk_fail   -o CMakeFiles/cmTC_73efc.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_73efc
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73efc.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -Wimplicit-function-declaration -Wredundant-decls -fPIC -O2 -Werror -DCHECK_FUNCTION_EXISTS=__stack_chk_fail    CMakeFiles/cmTC_73efc.dir/CheckFunctionExists.c.o  -o cmTC_73efc -lssp 
+/usr/bin/ld: cannot find -lssp
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_73efc.dir/build.make:87: cmTC_73efc] Error 1
+make[1]: Leaving directory '/home/pi/STLINK/stlink/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_73efc/fast] Error 2
+
+
+Performing C SOURCE FILE Test C_SUPPORTS_WMISSING_VARIABLE_DECLARATIONS failed with the following output:
+Change Dir: /home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0bf29/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0bf29.dir/build.make CMakeFiles/cmTC_0bf29.dir/build
+make[1]: Entering directory '/home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0bf29.dir/src.c.o
+/usr/bin/cc   -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -DC_SUPPORTS_WMISSING_VARIABLE_DECLARATIONS   -Wmissing-variable-declarations -o CMakeFiles/cmTC_0bf29.dir/src.c.o   -c /home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-Wmissing-variable-declarations'; did you mean '-Wmissing-declarations'?
+make[1]: *** [CMakeFiles/cmTC_0bf29.dir/build.make:66: CMakeFiles/cmTC_0bf29.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0bf29/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Performing C SOURCE FILE Test C_SUPPORTS_WSHORTEN_64_TO_32 failed with the following output:
+Change Dir: /home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_ff2fb/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ff2fb.dir/build.make CMakeFiles/cmTC_ff2fb.dir/build
+make[1]: Entering directory '/home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_ff2fb.dir/src.c.o
+/usr/bin/cc   -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -DC_SUPPORTS_WSHORTEN_64_TO_32   -Wshorten-64-to-32 -o CMakeFiles/cmTC_ff2fb.dir/src.c.o   -c /home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp/src.c
+cc: error: unrecognized command line option '-Wshorten-64-to-32'
+make[1]: *** [CMakeFiles/cmTC_ff2fb.dir/build.make:66: CMakeFiles/cmTC_ff2fb.dir/src.c.o] Error 1
+make[1]: Leaving directory '/home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_ff2fb/fast] Error 2
+
+Source file was:
+int main(void) { return 0; }
+Determining if the function __stack_chk_fail exists in the ssp failed with the following output:
+Change Dir: /home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/make" "cmTC_0c6bd/fast"
+/usr/bin/make -f CMakeFiles/cmTC_0c6bd.dir/build.make CMakeFiles/cmTC_0c6bd.dir/build
+make[1]: Entering directory '/home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_0c6bd.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -Wimplicit-function-declaration -Wredundant-decls -fPIC -O2 -Werror -DCHECK_FUNCTION_EXISTS=__stack_chk_fail   -o CMakeFiles/cmTC_0c6bd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.13/Modules/CheckFunctionExists.c
+Linking C executable cmTC_0c6bd
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0c6bd.dir/link.txt --verbose=1
+/usr/bin/cc  -std=gnu11 -std=gnu18 -Wall -Wextra -Wshadow -D_FORTIFY_SOURCE=2 -fstrict-aliasing -Wundef -Wformat -Wformat-security -Wmaybe-uninitialized -Wimplicit-function-declaration -Wredundant-decls -fPIC -O2 -Werror -DCHECK_FUNCTION_EXISTS=__stack_chk_fail    CMakeFiles/cmTC_0c6bd.dir/CheckFunctionExists.c.o  -o cmTC_0c6bd -lssp 
+/usr/bin/ld: cannot find -lssp
+collect2: error: ld returned 1 exit status
+make[1]: *** [CMakeFiles/cmTC_0c6bd.dir/build.make:87: cmTC_0c6bd] Error 1
+make[1]: Leaving directory '/home/pi/stlink_build/stlink/CMakeFiles/CMakeTmp'
+make: *** [Makefile:121: cmTC_0c6bd/fast] Error 2
+
+

@@ -1,4 +1,4 @@
-# Install script for directory: /root/Downloads/st_link_git/stlink/cmake/packaging/rpm
+# Install script for directory: /home/pi/stlink_build/stlink/cmake/packaging/rpm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
